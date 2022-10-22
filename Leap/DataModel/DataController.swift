@@ -19,7 +19,6 @@ class DataController: ObservableObject{
         }
     }
     
-    
     func addPerson(username: String, password: String, name: String, categ: [String], context: NSManagedObjectContext) -> Person?{
         let person = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
         

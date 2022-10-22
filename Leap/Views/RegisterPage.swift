@@ -9,12 +9,13 @@ import SwiftUI
 
 struct Register: View {
     @Environment(\.managedObjectContext) var managedObj
-    @Environment(\.dismiss) var dism
+    @Environment(\.dismiss) var dismiss
     @Binding var choices: Categories
     @State private var username = ""
+    @State private var name = ""
     @State private var password = ""
     @State private var checkPassword = ""
-    
+    @State var categs: [String]
     @State private var isNotEqual = false
     @State private var checked = true
     
@@ -25,9 +26,10 @@ struct Register: View {
             VStack {
                 Form {
                      Section{
+                         TextField("Name", text: $name)
                          TextField("Username", text: $username)
-                         TextField("Password", text: $password)
-                         TextField("Confirm Password", text: $checkPassword)
+                         SecureField("Password", text: $password)
+                         SecureField("Confirm Password", text: $checkPassword)
                      } header: {
                          HStack {
                              Spacer()
@@ -40,17 +42,23 @@ struct Register: View {
                      }
                     
                      ScrollView {
-                         ForEach(Categories.allCases) { choices in
-                             CategoryOption(choices: choices).tag(choices)
-                         }
-                     }
+                             ForEach(Categories.allCases) { choices in
+                                 CategoryOption(choices: choices, categs: $categs).tag(choices)
+                                 
+                             }
+                         
+                     }.frame(height: .minimum(300, 300))
                 }
                 Section{
                     Button("Register") {
-                        
                         if password != checkPassword {
                             isNotEqual = true
+                        } else {
+                            DataController().addPerson(username: username, password: password, name: name, categ: categs, context: managedObj)
+                            dismiss()
+                            
                         }
+                        
                     }.fontWeight(.bold)
                         .font(.title2)
                         .padding(.horizontal, 32)
@@ -60,7 +68,6 @@ struct Register: View {
                         .cornerRadius(100)
                         .alert(isPresented: $isNotEqual) {
                             Alert(title: Text("Passwords do not match"),
-                                              message: Text("Thank you for shopping with us."),
                                               dismissButton: .default(Text("OK")))
                         }
             
@@ -76,6 +83,6 @@ struct Register: View {
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
-        Register(choices: .constant(.fun))
+        Register(choices: .constant(.fun), categs: [""])
     }
 }
