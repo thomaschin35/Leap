@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct LeapApp: App {
+    @State private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

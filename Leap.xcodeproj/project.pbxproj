@@ -11,6 +11,8 @@
 		F8493D312903B94300666619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D302903B94300666619 /* ContentView.swift */; };
 		F8493D332903B94300666619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D322903B94300666619 /* Assets.xcassets */; };
 		F8493D362903B94300666619 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D352903B94300666619 /* Preview Assets.xcassets */; };
+		F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */; };
+		F8493D442903BA0E00666619 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D432903BA0E00666619 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F8493D302903B94300666619 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8493D322903B94300666619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8493D352903B94300666619 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonModel.xcdatamodel; sourceTree = "<group>"; };
+		F8493D432903BA0E00666619 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		F8493D2D2903B94300666619 /* Leap */ = {
 			isa = PBXGroup;
 			children = (
-				F8493D2E2903B94300666619 /* LeapApp.swift */,
 				F8493D302903B94300666619 /* ContentView.swift */,
+				F8493D2E2903B94300666619 /* LeapApp.swift */,
+				F8493D462903BE2A00666619 /* Helpers */,
+				F8493D452903BE1F00666619 /* Views */,
+				F8493D3C2903B96800666619 /* DataModel */,
 				F8493D322903B94300666619 /* Assets.xcassets */,
 				F8493D342903B94300666619 /* Preview Content */,
 			);
@@ -65,6 +72,29 @@
 				F8493D352903B94300666619 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8493D3C2903B96800666619 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */,
+				F8493D432903BA0E00666619 /* DataController.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		F8493D452903BE1F00666619 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8493D462903BE2A00666619 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */,
+				F8493D442903BA0E00666619 /* DataController.swift in Sources */,
 				F8493D312903B94300666619 /* ContentView.swift in Sources */,
 				F8493D2F2903B94300666619 /* LeapApp.swift in Sources */,
 			);
@@ -339,6 +371,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */,
+			);
+			currentVersion = F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */;
+			path = PersonModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F8493D232903B94300666619 /* Project object */;
 }
