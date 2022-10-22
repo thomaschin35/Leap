@@ -16,18 +16,45 @@ struct Login: View {
     
     
     var body: some View {
-        VStack {
-            Form{
-                Section {
+        NavigationView {
+            VStack {
+                Form{
+                    Section{
+                    }
+                    Section{
+                        TextField("Username", text: $username).padding()
+                        SecureField("Password", text: $password).padding()
+                    } header: {
+                        HStack {
+                            Spacer()
+                            Text("Login to your account")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.gray)
+                                .multilineTextAlignment(.center)
+                                .padding(.vertical)
+                            Spacer()
+                        }
+                    }
+                    Image("Wellness-Header")
                 }
-                Section(header: Text("Login")
-                    .font(.title)
-                    .fontWeight(.black)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 5.0)){
-                    TextField("Username", text: $username).padding()
-                    TextField("Password", text: $password).padding()
+                
+                Spacer()
+                Section{
+                    Button("Login"){
+                        NavigationLink(destination: <#T##() -> _#>, label: <#T##() -> _#>)
+                    }.fontWeight(.bold)
+                        .font(.title2)
+                        .padding(.horizontal, 32)
+                        .padding(.vertical, 16)
+                        .frame(width: 343)
+                        .background(Color(red: 0.37, green: 0.69, blue: 0.46))
+                        .cornerRadius(100)
                 }
+                
+                Text("Don't have an account? Sign up Here")
+                Spacer()
+                
             }
         }
     }
