@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject{
-    let container = NSPersistentContainer(name:  "PersonModel")
+    let container = NSPersistentContainer(name: "PersonModel")
     
     init() {
         container.loadPersistentStores { desc, error in
@@ -19,23 +19,23 @@ class DataController: ObservableObject{
         }
     }
     
-    func save(context: NSManagedObjectContext) {
-        do {
-            try context.save()
-            print("Data Saved")
-        } catch {
-            print("We could not save the data")
-        }
-    }
     
-    func addPerson(username: String, password: String, name: String, categ: [String], context: NSManagedObjectContext){
-        let person = Person(context: context)
+    func addPerson(username: String, password: String, name: String, categ: [String], context: NSManagedObjectContext) -> Person?{
+        let person = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
+        
         person.categories = categ
         person.username = username
         person.password = password
         person.name = name
         
-        save(context: context)
+        do {
+            try context.save()
+            print("Data Saved")
+            return person
+        } catch {
+            print("We could not save the data")
+        }
+        return nil
     }
     
     func editPerson(person: Person, name: String, categ: [String], context: NSManagedObjectContext) {

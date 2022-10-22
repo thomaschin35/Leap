@@ -13,7 +13,11 @@
 		F8493D362903B94300666619 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D352903B94300666619 /* Preview Assets.xcassets */; };
 		F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */; };
 		F8493D442903BA0E00666619 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D432903BA0E00666619 /* DataController.swift */; };
-		F8FFF37F2903D0D300380C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF37E2903D0D300380C9E /* Login.swift */; };
+		F8DAFCE92904432F008A6691 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCE82904432F008A6691 /* RegisterPage.swift */; };
+		F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCEC290448D9008A6691 /* ToggleCheckboxStyle.swift */; };
+		F8DAFCEF29047099008A6691 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCEE29047099008A6691 /* Categories.swift */; };
+		F8DAFCF3290474A6008A6691 /* CategoryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCF2290474A6008A6691 /* CategoryOption.swift */; };
+		F8FFF37F2903D0D300380C9E /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF37E2903D0D300380C9E /* LoginPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,11 @@
 		F8493D352903B94300666619 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonModel.xcdatamodel; sourceTree = "<group>"; };
 		F8493D432903BA0E00666619 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		F8FFF37E2903D0D300380C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		F8DAFCE82904432F008A6691 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		F8DAFCEC290448D9008A6691 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
+		F8DAFCEE29047099008A6691 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		F8DAFCF2290474A6008A6691 /* CategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOption.swift; sourceTree = "<group>"; };
+		F8FFF37E2903D0D300380C9E /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +96,8 @@
 		F8493D452903BE1F00666619 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8FFF37E2903D0D300380C9E /* Login.swift */,
+				F8FFF37E2903D0D300380C9E /* LoginPage.swift */,
+				F8DAFCE82904432F008A6691 /* RegisterPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +105,9 @@
 		F8493D462903BE2A00666619 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F8DAFCEC290448D9008A6691 /* ToggleCheckboxStyle.swift */,
+				F8DAFCEE29047099008A6691 /* Categories.swift */,
+				F8DAFCF2290474A6008A6691 /* CategoryOption.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,10 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DAFCE92904432F008A6691 /* RegisterPage.swift in Sources */,
+				F8DAFCEF29047099008A6691 /* Categories.swift in Sources */,
 				F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */,
-				F8FFF37F2903D0D300380C9E /* Login.swift in Sources */,
+				F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */,
+				F8FFF37F2903D0D300380C9E /* LoginPage.swift in Sources */,
 				F8493D442903BA0E00666619 /* DataController.swift in Sources */,
 				F8493D312903B94300666619 /* ContentView.swift in Sources */,
+				F8DAFCF3290474A6008A6691 /* CategoryOption.swift in Sources */,
 				F8493D2F2903B94300666619 /* LeapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
