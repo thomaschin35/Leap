@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CategoryOption: View {
     let choices: Categories
-    @State var checked = false
+    @Binding var categs: [String]
+    @State var checked: Bool = false
     var body: some View {
         Group{
             HStack {
@@ -19,6 +20,10 @@ struct CategoryOption: View {
                     .labelsHidden()
                     .toggleStyle(ToggleCheckboxStyle())
                     .font(.title)
+                    .onChange(of: checked) { value in
+                        categs.append(choices.name)
+                    }
+                
             }
         }.padding(.all, 1.0)
     }
@@ -26,6 +31,6 @@ struct CategoryOption: View {
 
 struct CategoryOption_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryOption(choices: .health)
+        CategoryOption(choices: .health, categs: .constant(["Social","Health"]))
     }
 }
