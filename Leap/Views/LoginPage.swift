@@ -13,6 +13,7 @@ struct Login: View {
     
     @State private var username = ""
     @State private var password = ""
+    @State private var showDashboard = false
     
     
     var body: some View {
@@ -29,8 +30,7 @@ struct Login: View {
                             Spacer()
                             Text("Login to your account")
                                 .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.gray)
+                                .fontWeight(.heavy)
                                 .multilineTextAlignment(.center)
                                 .padding(.vertical)
                             Spacer()
@@ -42,7 +42,8 @@ struct Login: View {
                 Spacer()
                 Section{
                     Button("Login"){
-                        NavigationLink(destination: <#T##() -> _#>, label: <#T##() -> _#>)
+                        //If can login
+                        showDashboard = true
                     }.fontWeight(.bold)
                         .font(.title2)
                         .padding(.horizontal, 32)
@@ -50,6 +51,7 @@ struct Login: View {
                         .frame(width: 343)
                         .background(Color(red: 0.37, green: 0.69, blue: 0.46))
                         .cornerRadius(100)
+                    NavigationLink("", destination:  DashboardPage(days: .Sat), isActive: $showDashboard)
                 }
                 
                 Text("Don't have an account? Sign up Here")
