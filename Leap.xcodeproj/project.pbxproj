@@ -12,12 +12,13 @@
 		A9252E7B2904F8E300DEB881 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E7A2904F8E300DEB881 /* CardView.swift */; };
 		A9252E7D2905212100DEB881 /* AddChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E7C2905212100DEB881 /* AddChallenge.swift */; };
 		F8063EF62904C8700088C5B9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8063EF52904C8700088C5B9 /* ImagePicker.swift */; };
+		F82A0E10290500370009B354 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F82A0E0F290500370009B354 /* GoogleService-Info.plist */; };
 		F8493D2F2903B94300666619 /* LeapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D2E2903B94300666619 /* LeapApp.swift */; };
 		F8493D312903B94300666619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D302903B94300666619 /* ContentView.swift */; };
 		F8493D332903B94300666619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D322903B94300666619 /* Assets.xcassets */; };
 		F8493D362903B94300666619 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D352903B94300666619 /* Preview Assets.xcassets */; };
-		F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */; };
-		F8493D442903BA0E00666619 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D432903BA0E00666619 /* DataController.swift */; };
+		F880C30C2905193600107B55 /* PersonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F880C3092905193600107B55 /* PersonModel.xcdatamodeld */; };
+		F880C30D2905193600107B55 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F880C30B2905193600107B55 /* DataController.swift */; };
 		F8DAFCE92904432F008A6691 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCE82904432F008A6691 /* RegisterPage.swift */; };
 		F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCEC290448D9008A6691 /* ToggleCheckboxStyle.swift */; };
 		F8DAFCEF29047099008A6691 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAFCEE29047099008A6691 /* Categories.swift */; };
@@ -33,13 +34,14 @@
 		A9252E7A2904F8E300DEB881 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A9252E7C2905212100DEB881 /* AddChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallenge.swift; sourceTree = "<group>"; };
 		F8063EF52904C8700088C5B9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F82A0E0F290500370009B354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8493D2B2903B94300666619 /* Leap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8493D2E2903B94300666619 /* LeapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeapApp.swift; sourceTree = "<group>"; };
 		F8493D302903B94300666619 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8493D322903B94300666619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8493D352903B94300666619 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonModel.xcdatamodel; sourceTree = "<group>"; };
-		F8493D432903BA0E00666619 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F880C30A2905193600107B55 /* PersonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonModel.xcdatamodel; sourceTree = "<group>"; };
+		F880C30B2905193600107B55 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F8DAFCE82904432F008A6691 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		F8DAFCEC290448D9008A6691 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		F8DAFCEE29047099008A6691 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -81,9 +83,10 @@
 			children = (
 				F8493D302903B94300666619 /* ContentView.swift */,
 				F8493D2E2903B94300666619 /* LeapApp.swift */,
+				F82A0E0F290500370009B354 /* GoogleService-Info.plist */,
 				F8493D462903BE2A00666619 /* Helpers */,
 				F8493D452903BE1F00666619 /* Views */,
-				F8493D3C2903B96800666619 /* DataModel */,
+				F880C3082905193600107B55 /* DataModel */,
 				F8493D322903B94300666619 /* Assets.xcassets */,
 				F8493D342903B94300666619 /* Preview Content */,
 			);
@@ -96,15 +99,6 @@
 				F8493D352903B94300666619 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F8493D3C2903B96800666619 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */,
-				F8493D432903BA0E00666619 /* DataController.swift */,
-			);
-			path = DataModel;
 			sourceTree = "<group>";
 		};
 		F8493D452903BE1F00666619 /* Views */ = {
@@ -131,6 +125,15 @@
 				A9252E7A2904F8E300DEB881 /* CardView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F880C3082905193600107B55 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				F880C3092905193600107B55 /* PersonModel.xcdatamodeld */,
+				F880C30B2905193600107B55 /* DataController.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +196,7 @@
 			files = (
 				F8493D362903B94300666619 /* Preview Assets.xcassets in Resources */,
 				F8493D332903B94300666619 /* Assets.xcassets in Resources */,
+				F82A0E10290500370009B354 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,13 +208,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DAFCE92904432F008A6691 /* RegisterPage.swift in Sources */,
+				F880C30D2905193600107B55 /* DataController.swift in Sources */,
 				F8DAFCEF29047099008A6691 /* Categories.swift in Sources */,
-				F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */,
+				F880C30C2905193600107B55 /* PersonModel.xcdatamodeld in Sources */,
 				F8DAFCF72904BA00008A6691 /* DashboardPage.swift in Sources */,
 				A9252E7B2904F8E300DEB881 /* CardView.swift in Sources */,
 				F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */,
 				F8FFF37F2903D0D300380C9E /* LoginPage.swift in Sources */,
-				F8493D442903BA0E00666619 /* DataController.swift in Sources */,
 				F8493D312903B94300666619 /* ContentView.swift in Sources */,
 				A9252E7D2905212100DEB881 /* AddChallenge.swift in Sources */,
 				F8DAFCF3290474A6008A6691 /* CategoryOption.swift in Sources */,
@@ -421,12 +425,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F8493D402903B9CD00666619 /* PersonModel.xcdatamodeld */ = {
+		F880C3092905193600107B55 /* PersonModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */,
+				F880C30A2905193600107B55 /* PersonModel.xcdatamodel */,
 			);
-			currentVersion = F8493D412903B9CD00666619 /* PersonModel.xcdatamodel */;
+			currentVersion = F880C30A2905193600107B55 /* PersonModel.xcdatamodel */;
 			path = PersonModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

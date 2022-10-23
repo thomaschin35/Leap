@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+//import FirebaseCore
+
 
 @main
 struct LeapApp: App {
-    @State private var dataController = DataController()
-    
+    @StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
-            Login().environment(\.managedObjectContext, dataController.container.viewContext)
+            LoginPage().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
+
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchingOptions:
+//                     [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//        FirebaseApp.configure()
+//        return true
+//    }
+//}
