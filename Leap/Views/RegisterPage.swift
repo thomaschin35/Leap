@@ -15,14 +15,12 @@ struct RegisterPage: View {
     @State private var name = ""
     @State private var password = ""
     @State private var checkPassword = ""
-    @State var categs: [String]
     @State private var isNotEqual = false
     @State private var checked = true
     @State private var showLogin = false
 
     
     var body: some View {
-        
         
         ZStack {
             Color.yellow
@@ -48,7 +46,7 @@ struct RegisterPage: View {
                     
                      ScrollView {
                              ForEach(Categories.allCases) { choices in
-                                 CategoryOption(choices: choices, categs: $categs).tag(choices)
+                                 CategoryOption(choices: choices).tag(choices)
                              }
                          
                      }.frame(height: .minimum(300, 300))
@@ -59,7 +57,6 @@ struct RegisterPage: View {
                             isNotEqual = true
                         } else {
                             showLogin = true
-//                            var person = DataController().addPerson(username: username, password: password, name: name, categ: categs, context: managedObj)
                             NavigationLink("", destination:  LoginPage(), isActive: $showLogin)
                             dismiss()
                             
@@ -76,21 +73,16 @@ struct RegisterPage: View {
                             Alert(title: Text("Passwords do not match"),
                                               dismissButton: .default(Text("OK")))
                         }
-            
-                        
                 }
-                
-                
             }
         }
-        
     }
 }
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            RegisterPage(choices: .constant(.fun), categs: [""] )
+            RegisterPage(choices: .constant(.fun))
         }
     }
 }

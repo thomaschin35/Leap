@@ -8,35 +8,61 @@
 import SwiftUI
 
 struct AccountPage: View {
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\Challenges.completed)]) var challenges:
+        FetchedResults<Challenges>
+    @Environment(\.dismiss) var dismiss
+    
+
+    
     var body: some View {
-        HStack{
+        NavigationView{
             VStack{
-                Image ("profile pic ios app")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .shadow(radius: 10)
-                    .padding(.horizontal)
-                Spacer()
+                HStack{
+                    VStack{
+                        Image ("profile pic ios app")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .shadow(radius: 10)
+                            .padding(.horizontal)
+                        Spacer()
+                    }
+                    VStack(alignment: .leading){
+                        Text("George Burdell")
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                            .padding(.top)
+                        Text("@gburdellgt35")
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                Divider()
+                Text("Total Challenges Completed: " + String(challengesCompleted()))
+                Divider()
+                Section{
+                    ScrollView {
+                        List{
+                            ForEach(challenges) { challenges in
+                                NavigationLink(destination: Text("\(challenges.name)")) {
+                                    HStack{
+                                        
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+
+                    }
+                }
             }
-            VStack(alignment: .leading){
-                Text("[User's Name]")
-                    .font(.title)
-                    .multilineTextAlignment(.center)
-                    .padding(.top)
-                Text("@username")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-                Spacer()
-            }
-            Spacer()
         }
-        ContainerRelativeShape()
-        ScrollView {
-            Divider()
-            Section{
-                
-            }
-        }
+    }
+    private func challengesCompleted() -> Int {
+        return 5
     }
 }
 

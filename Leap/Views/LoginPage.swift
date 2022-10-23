@@ -15,7 +15,7 @@ struct LoginPage: View {
     @State private var password = ""
     @State private var showDashboard = false
     @State private var restricted = false
-    @State private var canNavigative = true
+    @State private var canNavigate = false
     
     
     var body: some View {
@@ -27,8 +27,7 @@ struct LoginPage: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Form{
-                        Section{
-                        }
+                        Image("Wellness-Header").frame(maxHeight: 70)
                         Section{
                             TextField("Username", text: $username).padding()
                             SecureField("Password", text: $password).padding()
@@ -43,19 +42,14 @@ struct LoginPage: View {
                                 Spacer()
                             }
                         }
-                        Image("Wellness-Header")
+                        
                     }.scrollContentBackground(.hidden)
                     
                     Spacer()
                     Section{
                         Button("Login"){
-                            //                            if ()
-                            //                                showDashboard = true
-                            //                                NavigationLink("", destination:  DashboardPage(days: .Sat), isActive: $showDashboard)
-                            //                            } else {
-                            //                                restricted = true
-                            //
-                            //                            }
+                            showDashboard = true
+                            
                         }.fontWeight(.bold)
                             .font(.title2)
                             .padding(.horizontal, 32)
@@ -67,14 +61,18 @@ struct LoginPage: View {
                                 Alert(title: Text("Incorrect Username and/or Password"),
                                       dismissButton: .default(Text("OK")))
                             }
+                        NavigationLink("", destination:  DashboardPage(days: .Sat), isActive: $showDashboard)
                     }
                     
-                    NavigationLink("Don't have an account? \nSign up Here", destination:  RegisterPage(choices: .constant(.health), categs: [""]), isActive: $canNavigative)
+                    NavigationLink("Don't have an account? \nSign up Here", destination:  RegisterPage(choices: .constant(.health)), isActive: $canNavigate)
                         .font(.title2)
                         .padding(.horizontal, 32)
                         .padding(.vertical, 16)
                         .frame(width: 342.0)
                         .cornerRadius(100)
+                        .onSubmit{
+                            canNavigate = true
+                        }
                     Spacer()
                     
                 }
