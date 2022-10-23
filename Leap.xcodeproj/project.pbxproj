@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8063EF62904C8700088C5B9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8063EF52904C8700088C5B9 /* ImagePicker.swift */; };
 		F8493D2F2903B94300666619 /* LeapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D2E2903B94300666619 /* LeapApp.swift */; };
 		F8493D312903B94300666619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D302903B94300666619 /* ContentView.swift */; };
 		F8493D332903B94300666619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D322903B94300666619 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8063EF52904C8700088C5B9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F8493D2B2903B94300666619 /* Leap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8493D2E2903B94300666619 /* LeapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeapApp.swift; sourceTree = "<group>"; };
 		F8493D302903B94300666619 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				F8DAFCEE29047099008A6691 /* Categories.swift */,
 				F8DAFCF2290474A6008A6691 /* CategoryOption.swift */,
 				F8DAFCF42904B06A008A6691 /* Days.swift */,
+				F8063EF52904C8700088C5B9 /* ImagePicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				F8493D442903BA0E00666619 /* DataController.swift in Sources */,
 				F8493D312903B94300666619 /* ContentView.swift in Sources */,
 				F8DAFCF3290474A6008A6691 /* CategoryOption.swift in Sources */,
+				F8063EF62904C8700088C5B9 /* ImagePicker.swift in Sources */,
 				F8DAFCF52904B06A008A6691 /* Days.swift in Sources */,
 				F8493D2F2903B94300666619 /* LeapApp.swift in Sources */,
 			);
