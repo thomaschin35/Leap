@@ -11,7 +11,7 @@ struct DashboardPage: View {
     var days: Days
     @State var streak = 7
     @State var completed = false
-    @State var entry = "Reflect on the experience"
+    @State var entry = ""
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
     
@@ -33,8 +33,6 @@ struct DashboardPage: View {
                                 .background(.green)
                                 .clipShape(Circle())
                         }
-                        
-                        
                     }
                     .frame(height: 50.0)
                 }
@@ -143,7 +141,6 @@ struct DashboardPage: View {
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
         Spacer()
-        
     }
 }
     

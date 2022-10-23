@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9252E772904D29800DEB881 /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E762904D29800DEB881 /* AccountPage.swift */; };
+		A9252E792904EA2000DEB881 /* ArchivedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E782904EA2000DEB881 /* ArchivedPost.swift */; };
+		A9252E7B2904F8E300DEB881 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E7A2904F8E300DEB881 /* CardView.swift */; };
+		A9252E7D2905212100DEB881 /* AddChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9252E7C2905212100DEB881 /* AddChallenge.swift */; };
 		F8063EF62904C8700088C5B9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8063EF52904C8700088C5B9 /* ImagePicker.swift */; };
 		F8493D2F2903B94300666619 /* LeapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D2E2903B94300666619 /* LeapApp.swift */; };
 		F8493D312903B94300666619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D302903B94300666619 /* ContentView.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9252E762904D29800DEB881 /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
+		A9252E782904EA2000DEB881 /* ArchivedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedPost.swift; sourceTree = "<group>"; };
+		A9252E7A2904F8E300DEB881 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A9252E7C2905212100DEB881 /* AddChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallenge.swift; sourceTree = "<group>"; };
 		F8063EF52904C8700088C5B9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F8493D2B2903B94300666619 /* Leap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8493D2E2903B94300666619 /* LeapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeapApp.swift; sourceTree = "<group>"; };
@@ -37,7 +45,7 @@
 		F8DAFCEE29047099008A6691 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		F8DAFCF2290474A6008A6691 /* CategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOption.swift; sourceTree = "<group>"; };
 		F8DAFCF42904B06A008A6691 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
-		F8DAFCF62904BA00008A6691 /* DashboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardPage.swift; path = ../../../../.Trash/DashboardPage.swift; sourceTree = "<group>"; };
+		F8DAFCF62904BA00008A6691 /* DashboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPage.swift; sourceTree = "<group>"; };
 		F8FFF37E2903D0D300380C9E /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +113,8 @@
 				F8FFF37E2903D0D300380C9E /* LoginPage.swift */,
 				F8DAFCE82904432F008A6691 /* RegisterPage.swift */,
 				F8DAFCF62904BA00008A6691 /* DashboardPage.swift */,
+				A9252E762904D29800DEB881 /* AccountPage.swift */,
+				A9252E7C2905212100DEB881 /* AddChallenge.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +127,8 @@
 				F8DAFCF2290474A6008A6691 /* CategoryOption.swift */,
 				F8DAFCF42904B06A008A6691 /* Days.swift */,
 				F8063EF52904C8700088C5B9 /* ImagePicker.swift */,
+				A9252E782904EA2000DEB881 /* ArchivedPost.swift */,
+				A9252E7A2904F8E300DEB881 /* CardView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,14 +207,18 @@
 				F8DAFCEF29047099008A6691 /* Categories.swift in Sources */,
 				F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */,
 				F8DAFCF72904BA00008A6691 /* DashboardPage.swift in Sources */,
+				A9252E7B2904F8E300DEB881 /* CardView.swift in Sources */,
 				F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */,
 				F8FFF37F2903D0D300380C9E /* LoginPage.swift in Sources */,
 				F8493D442903BA0E00666619 /* DataController.swift in Sources */,
 				F8493D312903B94300666619 /* ContentView.swift in Sources */,
+				A9252E7D2905212100DEB881 /* AddChallenge.swift in Sources */,
 				F8DAFCF3290474A6008A6691 /* CategoryOption.swift in Sources */,
 				F8063EF62904C8700088C5B9 /* ImagePicker.swift in Sources */,
 				F8DAFCF52904B06A008A6691 /* Days.swift in Sources */,
+				A9252E792904EA2000DEB881 /* ArchivedPost.swift in Sources */,
 				F8493D2F2903B94300666619 /* LeapApp.swift in Sources */,
+				A9252E772904D29800DEB881 /* AccountPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
