@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A92B31042904786D00C51C53 /* DashboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B31032904786D00C51C53 /* DashboardPage.swift */; };
+		A93A38822904B77200C51C6A /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A38812904B77200C51C6A /* AccountPage.swift */; };
 		F8493D2F2903B94300666619 /* LeapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D2E2903B94300666619 /* LeapApp.swift */; };
 		F8493D312903B94300666619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8493D302903B94300666619 /* ContentView.swift */; };
 		F8493D332903B94300666619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8493D322903B94300666619 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A92B31032904786D00C51C53 /* DashboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPage.swift; sourceTree = "<group>"; };
+		A93A38812904B77200C51C6A /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
 		F8493D2B2903B94300666619 /* Leap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8493D2E2903B94300666619 /* LeapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeapApp.swift; sourceTree = "<group>"; };
 		F8493D302903B94300666619 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F8FFF37E2903D0D300380C9E /* LoginPage.swift */,
 				F8DAFCE82904432F008A6691 /* RegisterPage.swift */,
 				A92B31032904786D00C51C53 /* DashboardPage.swift */,
+				A93A38812904B77200C51C6A /* AccountPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				F8DAFCE92904432F008A6691 /* RegisterPage.swift in Sources */,
 				F8DAFCEF29047099008A6691 /* Categories.swift in Sources */,
+				A93A38822904B77200C51C6A /* AccountPage.swift in Sources */,
 				F8493D422903B9CD00666619 /* PersonModel.xcdatamodeld in Sources */,
 				A92B31042904786D00C51C53 /* DashboardPage.swift in Sources */,
 				F8DAFCED290448D9008A6691 /* ToggleCheckboxStyle.swift in Sources */,

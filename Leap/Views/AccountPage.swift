@@ -1,5 +1,5 @@
 //
-//  DashboardPage.swift
+//  AccountPage.swift
 //  Leap
 //
 //  Created by Aria Sharma on 10/22/22.
@@ -7,18 +7,40 @@
 
 import SwiftUI
 
-struct DashboardPage: View {
+struct AccountPage: View {
     var body: some View {
         Form{
             Section{} header: {
-                        HStack {
-                            Spacer()
-                            Text("Dashboard")
-                               .font(.title)
-                               .multilineTextAlignment(.center)
-                               .padding(.vertical)
-                            Spacer()
-                        }
+                HStack {
+                    Spacer()
+                    Text("Profile")
+                        .font(.title)
+                        .multilineTextAlignment(.right)
+                        .padding(.vertical)
+                    Spacer()
+                    
+                    Button(action: {
+                            }){
+                                ZStack{
+                                    Circle()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(.blue)
+                                    Text("Press me")
+                                }
+                            }
+                    
+                    
+                    Button(action: {
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(10)
+                    }
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(10)
+                }
                 Section{
                     VStack {
                         HStack {
@@ -79,8 +101,8 @@ struct DashboardPage: View {
     }
 }
 
-struct DashboardPage_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardPage()
+    struct AccountPage_Previews: PreviewProvider {
+        static var previews: some View {
+            AccountPage()
+        }
     }
-}
