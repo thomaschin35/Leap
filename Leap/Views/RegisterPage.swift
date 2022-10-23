@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Register: View {
+struct RegisterPage: View {
     @Environment(\.managedObjectContext) var managedObj
     @Environment(\.dismiss) var dismiss
     @Binding var choices: Categories
@@ -18,11 +18,16 @@ struct Register: View {
     @State var categs: [String]
     @State private var isNotEqual = false
     @State private var checked = true
+    @State private var showLogin = false
+
     
     var body: some View {
         
+        
         ZStack {
-            
+            Color.yellow
+                       .opacity(0.4)
+                       .edgesIgnoringSafeArea(.all)
             VStack {
                 Form {
                      Section{
@@ -44,17 +49,18 @@ struct Register: View {
                      ScrollView {
                              ForEach(Categories.allCases) { choices in
                                  CategoryOption(choices: choices, categs: $categs).tag(choices)
-                                 
                              }
                          
                      }.frame(height: .minimum(300, 300))
-                }
+                }.scrollContentBackground(.hidden)
                 Section{
                     Button("Register") {
                         if password != checkPassword {
                             isNotEqual = true
                         } else {
-                            DataController().addPerson(username: username, password: password, name: name, categ: categs, context: managedObj)
+                            showLogin = true
+//                            var person = DataController().addPerson(username: username, password: password, name: name, categ: categs, context: managedObj)
+                            NavigationLink("", destination:  LoginPage(), isActive: $showLogin)
                             dismiss()
                             
                         }
@@ -83,6 +89,8 @@ struct Register: View {
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
-        Register(choices: .constant(.fun), categs: [""])
+        NavigationView{
+            RegisterPage(choices: .constant(.fun), categs: [""] )
+        }
     }
 }
