@@ -13,7 +13,7 @@ struct LeapApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
+            Login().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
