@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct DashboardPage: View {
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.completed)]) var challenges:
+        FetchedResults<Challenges>
+    @Environment(\.dismiss) var dismiss
     var days: Days
     @State var streak = 7
     @State var completed = false
     @State var entry = ""
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
+    @State private var canNavigate = false
+    @State private var index: Int = 0
     
     var body: some View {
-        
         ZStack {
             Color.yellow
                 .opacity(0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             ScrollView{
                 VStack{
                     Section{
@@ -41,8 +47,8 @@ struct DashboardPage: View {
                     Section{
                         VStack(alignment: .center) {
                             HStack {
-                                Spacer()
-                                Text("Current Challenge")
+                                Spacer() // Random number from 0 to count, challenges[].name
+                                Text("Challenge of the Day")
                                     .font(.title)
                                     .multilineTextAlignment(.center)
                                     .padding()
@@ -53,11 +59,16 @@ struct DashboardPage: View {
                                 HStack() {
                                     Spacer()
                                     //Replace with a variable
-                                    Text("GO OUTSIDE FOR A RUN AND DO A LOT OF HOMEWORK")
+                                    //\(challenges[index].name ?? "Something Cool")
+                                    
+                                    Text("\(challenges[index].name ?? "Something Cool")")
                                         .font(.callout)
                                         .fontWeight(.semibold)
                                         .multilineTextAlignment(.center)
                                         .lineLimit(4)
+                                        .onAppear(){
+                                            index = Int.random(in: 0...(challenges.count - 1))
+                                        }
                                     Spacer()
                                 }
                                 .fixedSize(horizontal: false, vertical: true)
@@ -103,35 +114,41 @@ struct DashboardPage: View {
                                     .scrollContentBackground(.hidden)
                                     .foregroundColor(Color.black)
                                     .lineSpacing(5)
-                                    .frame(height: 200)
+                                    .frame(height: 160)
                                     .background(Color(red: 0.96, green: 0.96, blue: 0.96))
                                     .cornerRadius(7)
                             }
                             Spacer()
-                            Button("Finish Challenge!") {
+                            Section{
+                                Button("Finish Challenge!") {
+                                    
+                                    DataController().updateChallenge(challenge: challenges[index], reflection: entry, completed: true, context: managedObjContext)
+                                    canNavigate = true
+                                    
+                                }.fontWeight(.bold)
+                                    .font(.title2)
+                                    .foregroundColor(.black.opacity(0.5))
+                                    .padding(.horizontal, 32)
+                                    .padding(.vertical, 16)
+                                    .frame(width: 343)
+                                    .background(.mint.opacity(0.4))
+                                    .cornerRadius(100)
                                 
-                            }.fontWeight(.bold)
-                                .font(.title2)
-                                .foregroundColor(.black.opacity(0.5))
-                                .padding(.horizontal, 32)
-                                .padding(.vertical, 16)
-                                .frame(width: 343)
-                                .background(.mint.opacity(0.4))
-                                .cornerRadius(100)
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Button("Skip") {
-                                
-                            }.fontWeight(.bold)
-                                .font(.title2)
-                                .foregroundColor(.black.opacity(0.5))
-                                .padding(.horizontal, 32)
-                                .padding(.vertical, 16)
-                                .frame(width: 343)
-                                .background(Color.red.opacity(0.3))
-                                .cornerRadius(100)
-                            
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Button("Skip") {
+                                    index = Int.random(in:0...(challenges.count - 1))
+                                }.fontWeight(.bold)
+                                    .font(.title2)
+                                    .foregroundColor(.black.opacity(0.5))
+                                    .padding(.horizontal, 32)
+                                    .padding(.vertical, 16)
+                                    .frame(width: 343)
+                                    .background(Color.red.opacity(0.3))
+                                    .cornerRadius(100)
+                                NavigationLink("", destination:  AccountPage(), isActive: $canNavigate)
+                            }
                         }
                     }
                     .padding([.leading, .bottom, .trailing], 10)
@@ -144,6 +161,7 @@ struct DashboardPage: View {
             }
         }
         Spacer()
+        
     }
 }
     

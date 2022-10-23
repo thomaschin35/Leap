@@ -27,7 +27,17 @@ struct LoginPage: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Form{
-                        Image("Wellness-Header").frame(maxHeight: 70)
+                        Image("Logo").frame(maxHeight:100).overlay(
+                        ZStack{
+                            Color.clear.background(.ultraThinMaterial).frame(minHeight: 200)
+                            
+                            VStack {
+                                Text("LEAP").font(.largeTitle.weight(.bold)).tracking(10)
+                                Text("Living your life to the Fullest")
+                                Text("SEEK DISCOMFORT")
+                                
+                            }
+                        })
                         Section{
                             TextField("Username", text: $username).padding()
                             SecureField("Password", text: $password).padding()
@@ -36,7 +46,7 @@ struct LoginPage: View {
                                 Spacer()
                                 Text("Login to your account")
                                     .font(.title)
-                                    .fontWeight(.heavy)
+                                    .fontWeight(.medium)
                                     .multilineTextAlignment(.center)
                                     .padding(.vertical)
                                 Spacer()
@@ -49,6 +59,24 @@ struct LoginPage: View {
                     Section{
                         Button("Login"){
                             showDashboard = true
+                            if(UserDefaults.standard.bool(forKey: "isChallengesAdded") == false) {
+                                DataController().addChallenge(
+                                    name: "Talk to a Stranger", category: "Social", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Take at least a 10 minute walk", category:"Physical Health", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Meditate for at least 5 minutes", category: "Mental Health", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Journal about your past day", category: "Mindfulness", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Compliment a Stranger", category: "Social", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Ask a Stranger a random question", category: "Social", completed: false, reflection: "", context: managedObj)
+                                DataController().addChallenge(
+                                    name: "Organize your desk", category: "Academic", completed: false, reflection: "", context: managedObj)
+                                UserDefaults.standard.set(true, forKey: "isChallengesAdded")
+                                UserDefaults.standard.synchronize()
+                            }
                             
                         }.fontWeight(.bold)
                             .font(.title2)
@@ -61,6 +89,7 @@ struct LoginPage: View {
                                 Alert(title: Text("Incorrect Username and/or Password"),
                                       dismissButton: .default(Text("OK")))
                             }
+                            
                         NavigationLink("", destination:  DashboardPage(days: .Sat), isActive: $showDashboard)
                     }
                     
@@ -72,12 +101,14 @@ struct LoginPage: View {
                         .cornerRadius(100)
                         .onSubmit{
                             canNavigate = true
+                            addInitialChallenges()
+
                         }
                     Spacer()
                     
                 }
             }
-        }
+        }.navigationViewStyle(.stack)
     }
     
     
@@ -87,3 +118,13 @@ struct LoginPage: View {
         }
     }
 }
+private func addInitialChallenges() {
+    @Environment (\.managedObjectContext) var managedObjectContext;
+        //addMoreTestBooks()
+    DataController().addChallenge(
+        name: "Talk to a Stranger", category: "Social", completed: false, reflection: "", context: managedObjectContext)
+    
+        
+
+}
+

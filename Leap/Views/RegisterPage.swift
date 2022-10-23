@@ -81,8 +81,6 @@ struct RegisterPage: View {
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            RegisterPage(choices: .constant(.fun))
-        }
+        RegisterPage(choices: .constant(.fun))
     }
 }

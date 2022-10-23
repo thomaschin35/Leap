@@ -21,10 +21,7 @@ struct AddChallenge: View {
                 HStack {
                     Spacer()
                     Button ("Submit") {
-                        /*DataController().addPerson(username: <#T##String#>, password: <#T##String#>, name: <#T##String#>, categ: <#T##[String]#>, context: <#T##NSManagedObjectContext#>)
-                         */
-                        /*Datacontroller().addTask(priority: <#T##_Concurrency.TaskPriority?#>, operation: <#T##() -> ChildTaskResult#>)
-                         */
+                        DataController().addChallenge(name: name, category: category, completed: false, reflection: "", context: managedObjectContext)
                         dismiss()
                     }
                     Spacer()

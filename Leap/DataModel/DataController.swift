@@ -42,8 +42,9 @@ class DataController: ObservableObject{
         
     }
     
-    func updateChallenge(challenge: Challenges, completed: Bool, context: NSManagedObjectContext){
-//        person.categories = categ
+    func updateChallenge(challenge: Challenges, reflection: String, completed: Bool, context: NSManagedObjectContext){
+        
+        challenge.reflection = reflection
         challenge.completed = completed
 
         save(context: context)
