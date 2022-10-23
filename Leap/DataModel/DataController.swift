@@ -11,6 +11,7 @@ import CoreData
 class DataController: ObservableObject{
     let container = NSPersistentContainer(name: "PersonModel")
     
+    
     init() {
         container.loadPersistentStores { desc, error in
             if let error = error {
@@ -21,12 +22,12 @@ class DataController: ObservableObject{
     
     func addPerson(username: String, password: String, name: String, categ: [String], context: NSManagedObjectContext) -> Person?{
         let person = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
-        
-        person.categories = categ
-        person.username = username
-        person.password = password
-        person.name = name
-        
+    
+            person.categories = categ
+            person.username = username
+            person.password = password
+            person.name = name
+
         do {
             try context.save()
             print("Data Saved")
@@ -37,7 +38,17 @@ class DataController: ObservableObject{
         return nil
     }
     
-    func editPerson(person: Person, name: String, categ: [String], context: NSManagedObjectContext) {
+    
+    func fetchPerson() -> [Person]? {
+        let context = NSManagedObjectContext()
+        let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
         
+        do{
+            let personDetails = try context.fetch(fetchRequest)
+            return personDetails
+        } catch let fetchError {
+            print("Failed to fetch companies")
+        }
+        return nil
     }
 }
