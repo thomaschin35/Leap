@@ -12,7 +12,7 @@ struct AccountPage: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\Challenges.completed)]) var challenges:
         FetchedResults<Challenges>
     @Environment(\.dismiss) var dismiss
-    
+    @State private var showingAddView = false
 
     
     var body: some View {
@@ -39,32 +39,62 @@ struct AccountPage: View {
                     }
                     Spacer()
                 }
-                Divider()
+                
                 Text("Total Challenges Completed: " + String(challengesCompleted()))
-                Divider()
+                
                 Section{
                     ScrollView {
                         List{
-                            ForEach(challenges) { challenges in
-                                NavigationLink(destination: Text("\(challenges.name)")) {
+                            ForEach(challenges) { Challenge in
+                                NavigationLink(destination: Text("\(Challenge.name ?? "Sky Diving")")) {
                                     HStack{
-                                        
+                                        VStack(alignment: .leading, spacing: 6){
+                                            Text("Challenge").bold()
+                                            Text(String("\(Challenge.name)"))
+                                        }
+                                        Spacer()
+                                        Text("J-Entry")
+                                            .foregroundColor(.gray)
+                                            .italic()
                                     }
                                 }
                                 
-                            }
-                        }
-                        
-
+                            }.onDelete(perform: deleteChallenge)
+                        }.listStyle(.plain)
                     }
                 }
-            }
-        }
+                .frame(minHeight: 500)
+                Spacer()
+                Spacer()
+            }.navigationTitle("Profile / Archive")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddView.toggle()
+                        } label: {
+                            Label("Add Leap", systemImage: "plus.circle")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        EditButton()
+                    }
+                }
+                .sheet(isPresented: $showingAddView) {
+                    AddChallenge()
+                }
+        }.navigationViewStyle(.stack)
+        
     }
+    private func deleteChallenge(offsets: IndexSet){
+        
+    }
+
     private func challengesCompleted() -> Int {
         return 5
     }
+    
 }
+
 
 struct AccountPage_Previews: PreviewProvider {
     static var previews: some View {

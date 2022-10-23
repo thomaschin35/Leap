@@ -25,6 +25,7 @@ struct AddChallenge: View {
                          */
                         /*Datacontroller().addTask(priority: <#T##_Concurrency.TaskPriority?#>, operation: <#T##() -> ChildTaskResult#>)
                          */
+                        dismiss()
                     }
                     Spacer()
                 }
