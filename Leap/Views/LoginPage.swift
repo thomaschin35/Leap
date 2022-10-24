@@ -101,7 +101,6 @@ struct LoginPage: View {
                         .cornerRadius(100)
                         .onSubmit{
                             canNavigate = true
-                            addInitialChallenges()
 
                         }
                     Spacer()

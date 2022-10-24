@@ -14,9 +14,7 @@ enum Categories: String, CaseIterable, Identifiable{
     case spontaneous
     case fun
     case dailychores
-    case dailychores1
-    case dailychores2
-    case dailychores3
+    case acad
     
     var name: String {
         rawValue.capitalized
