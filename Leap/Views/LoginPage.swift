@@ -22,6 +22,7 @@ struct LoginPage: View {
         
         NavigationView {
             ZStack {
+                
                 Color.yellow
                     .opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
@@ -30,17 +31,17 @@ struct LoginPage: View {
                         Image("Logo").frame(maxHeight:100).overlay(
                         ZStack{
                             Color.clear.background(.ultraThinMaterial).frame(minHeight: 200)
-                            
                             VStack {
                                 Text("LEAP").font(.largeTitle.weight(.bold)).tracking(10)
-                                Text("Living your life to the Fullest")
-                                Text("SEEK DISCOMFORT")
+//                                Text("Living your life to the Fullest")
+//                                Text("SEEK DISCOMFORT")
                                 
                             }
                         })
                         Section{
-                            TextField("Username", text: $username).padding()
-                            SecureField("Password", text: $password).padding()
+                            TextField("Username", text: $username).padding(.vertical, 8.0)
+                            SecureField("Password", text: $password)
+                                .padding(.all, 6.0)
                         } header: {
                             HStack {
                                 Spacer()

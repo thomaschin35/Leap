@@ -17,7 +17,7 @@ struct LeapApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginPage().environment(\.managedObjectContext, dataController.container.viewContext)
+            SplashScreenView().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
